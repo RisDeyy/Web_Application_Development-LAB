@@ -1,0 +1,41 @@
+body {
+    font-family: Verdana, sans-serif;
+}
+
+h1{
+    font-family: Marko one, Georgia, serif;
+}
+
+dt{
+    font-weight: bold
+}
+
+strong{
+    font-style: italic;
+    color: tomato;
+}
+
+#info{
+    color:teal;
+}
+
+#info p{
+    font-style: italic;
+}
+
+.price{
+    font-family: Georgia, serif;
+    font-style: italic;
+    color:gray;
+}
+
+.label{
+    font-weight: bold;
+    font-variant: small-caps;
+    font-style: normal;
+}
+
+.warning{
+    font-size: small;
+    color: red;
+}

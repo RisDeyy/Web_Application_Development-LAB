@@ -1,0 +1,137 @@
+EX2:
+1. 
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongod
+mongod
+Current Mongosh Log ID: 64c337e6b5a3981d3c2c9a08
+Connecting to:          mongodb://127.0.0.1:27017/mongod?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.1
+Using MongoDB:          6.0.8
+Using Mongosh:          1.10.1
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2023-07-28T10:24:26.333+07:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+2.
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongo
+mongo
+Current Mongosh Log ID: 64c33831fa810100ecabc20a
+Connecting to:          mongodb://127.0.0.1:27017/mongo?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.1
+Using MongoDB:          6.0.8
+Using Mongosh:          1.10.1
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2023-07-28T10:24:26.333+07:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+3. 
+mongo> show databases
+admin    40.00 KiB
+config  108.00 KiB
+local    40.00 KiB
+4. 
+mongo> use vp21db
+switched to db vp21db
+5.
+vp21db>  db.students.insertMany([
+            { name: "Dao Thanh Luc", studentID: "21126074" },
+            { name: "Nguyen The Phung DB*", studentID: "21126089" }
+          ]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64c33be5fa810100ecabc20d"),
+    '1': ObjectId("64c33be5fa810100ecabc20e")
+  }
+}
+6.
+vp21db> db.students.find()
+[
+  {
+    _id: ObjectId("64c33be5fa810100ecabc20d"),
+    name: 'Dao Thanh Luc',
+    studentID: '21126074'
+  },
+  {
+    _id: ObjectId("64c33be5fa810100ecabc20e"),
+    name: 'Nguyen The Phung DB*',
+    studentID: '21126089'
+  }
+]
+7.
+vp21db> db.students.findOne({ studentID: "21126074" })
+{
+  _id: ObjectId("64c33be5fa810100ecabc20d"),
+  name: 'Dao Thanh Luc',
+  studentID: '21126074'
+}
+8.
+vp21db> db.students.deleteOne({ studentID:"21126089"})
+{ acknowledged: true, deletedCount: 1 }
+9.
+vp21db> db.students.find()
+[
+  {
+    _id: ObjectId("64c33be5fa810100ecabc20d"),
+    name: 'Dao Thanh Luc',
+    studentID: '21126074'
+  }
+]
+10.
+db.students.insertMany([
+      { name: "Do Anh Nghia", studentID:"21126076", dateOfBirth: "2003-03-15", class: "21VP" },
+      { name: "Do Tran Duc Huy", studentID: "21126099", dateOfBirth: "2003-08-22", class: "21VP" }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64c33fb2fa810100ecabc215"),
+    '1': ObjectId("64c33fb2fa810100ecabc216")
+  }
+}
+11.
+db.students.updateOne(
+  { studentID: "21126074" },
+  { $set: { dateOfBirth: "1998-11-25", class: "21CLC" } }
+);
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+12.
+ db.students.find()
+[
+  {
+    _id: ObjectId("64c33be5fa810100ecabc20d"),
+    name: 'Dao Thanh Luc',
+    studentID: '21126074',
+    class: '21CLC',
+    dateOfBirth: '1998-11-25'
+  },
+  {
+    _id: ObjectId("64c33f88fa810100ecabc213"),
+    name: 'Do Anh Nghia',
+    studentID: '21126076',
+    dateOfBirth: '2003-03-15',
+    class: '21VP'
+  },
+  {
+    _id: ObjectId("64c33f88fa810100ecabc214"),
+    name: 'Do Tran Duc Huy',
+    studentID: '21126099',
+    dateOfBirth: '2003-08-22',
+    class: '21VP'
+  }
+]
+
+

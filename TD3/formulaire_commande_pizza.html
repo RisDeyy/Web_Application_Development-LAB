@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Formulaire de commande de pizza</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Blackstone Bistro | Pizza-on-Demand</h1>
+        <p>Our 12" wood-fired pizzas are available for delivery. Build your custom pizza and we'll deliver it within an hour.</p>
+        <div>
+            <fieldset>
+                <legend>Information</legend>
+                <div id="information">
+                    <label>Name:</label>
+                    <input type="text"> <br>
+                    <label>Address:</label>
+                    <input type="text"> <br>
+                    <label>Telephone Number:</label>
+                    <input type="text"> <br>
+                    <label>Email:</label>
+                    <input type="text"> <br>
+                    <label>Delivery instructions:</label>
+                    <input type="text" id="label_delivery"> <br> <br>
+                </div>
+            </fieldset>
+        </div>
+        <h2>Design Your Dream Pizza</h2>
+        <div>
+            <fieldset>
+            <legend>Pizza specs</legend>
+            <div>
+                <p>Crust <em>(Choose one)</em>:</p>
+                <ol>
+                    <li><input type="radio" value="Classic white">Classic white</li>
+                    <li><input type="radio" value="Multigrain">Multigrain</li>
+                    <li><input type="radio" value="Cheese-stuffed crust">Cheese-stuffed crust</li>
+                    <li><input type="radio" value="Gluten-free">Gluten-free</li>
+                </ol>
+                
+                <p>Toppings <em>Choose as many as you want</em>:</p>
+                <ul>
+                    <li><input type="checkbox" value="Red sauce">Red sauce</li>
+                    <li><input type="checkbox" value="White sauce">White sauce</li>
+                    <li><input type="checkbox" value="Mozzarella Cheese">Mozzarella Cheese</li>
+                    <li><input type="checkbox" value="Pepperoni">Pepperoni</li>
+                    <li><input type="checkbox" value="Mushrooms">Mushrooms</li>
+                    <li><input type="checkbox" value="Peppers">Peppers</li>
+                    <li><input type="checkbox" value="Anchovies">Anchovies</li>
+                </ul>
+            </fieldset>        
+        </div>
+
+            <fieldset>
+                <legend>Number</legend>
+                <label>How many pizza:</label>
+                <input type="text" id="order">
+                <br>
+                <div id="form_submit">
+                    <button>Bring me a pizza!</button>
+                    <button>Reset</button>
+                </div>
+            </fieldset>
+        </div>
+    </body>
+</html>

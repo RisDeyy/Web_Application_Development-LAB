@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculatrice</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>Calculatrice</h1>
+
+        <div>
+        <label for="num1">Nombre 1:</label>
+        <input type="number" id="num1">
+    </div>
+
+    <div>
+        <label for="operation">Opération:</label>
+        <select id="operation">
+            <option value="addition">+</option>
+            <option value="subtraction">-</option>
+            <option value="multiplication">*</option>
+            <option value="division">/</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="num2">Nombre 2:</label>
+        <input type="number" id="num2">
+    </div>
+
+    <button onclick="calculate()">Calculer</button>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

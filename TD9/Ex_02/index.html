@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Edit page</title>
+    </head>
+    <body>
+        <h1>Change style of document</h1>
+        <p id="text">Hello!!</p>
+        <label>Chosse Text Color</label>
+        <select id="select-color-text" onchange="changeText_Color(event)">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="white">White</option>
+            <option value="black">Black</option>
+        </select>
+
+        <script>    
+            function changeText_Color(event){
+                var color = document.getElementById("text");
+                var selectedColor = event.target.value;
+
+                color.style.color = selectedColor;
+            }
+        </script>
+        <hr>
+
+        <label>Chosse Font Family Text</label>
+        <select id="select-font-family" onchange="changeFont_Family(event)">
+            <option value="serif">Serif</option>
+            <option value="sans-serif">Sans-serif</option>
+            <option value="monospace">Monospace</option>
+            <option value="verdana">Verdana</option>
+            <option value="georgia">Georgia</option>
+            <option value="arial">Arial</option>
+        </select>
+
+        <script>
+            function changeFont_Family(event){
+                var font = document.getElementById("text");
+                var selectedFont = event.target.value;
+
+                font.style.fontFamily = selectedFont;
+            }
+        </script>
+        <hr>
+
+        <label>Chosse Font Size Text</label>
+        <select id="select-font-size" onchange="changeFont_Size(event)">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="x-large">Large +</option>
+            <option value="xx-large">Large ++</option>
+        </select>
+
+        <script>
+            function changeFont_Size(event) {
+                var fontSize = document.getElementById("text");
+                var selectedFontSize = event.target.value;
+
+                fontSize.style.fontSize = selectedFontSize;
+            }
+        </script>
+        <hr>
+
+        <label>Chosse Background Color</label>
+        <select id="select-color-background" onchange="changeBackground_Color(event)">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="white">White</option>
+            <option value="black">Black</option>
+        </select>
+
+        <script>    
+            function changeBackground_Color(event){
+                var background = document.body;
+                var selectedColor = event.target.value;
+
+                background.style.backgroundColor = selectedColor;
+    }
+        </script>
+
+        <hr>
+    </body>
+</html>

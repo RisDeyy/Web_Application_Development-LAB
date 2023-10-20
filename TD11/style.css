@@ -1,0 +1,12 @@
+html{
+    background: url(backgroung-img.jpg);
+    background-size:cover;
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+    text-align: center;
+}
